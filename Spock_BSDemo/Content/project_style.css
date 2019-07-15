@@ -1,4 +1,8 @@
-﻿.boxResult {
+﻿.modal-content {
+    background: linear-gradient(135deg, #a1dbff 0%,#cbebff 21%,#f0f9ff 100%);
+}
+
+.boxResult {
     border-radius: 5px;
     border: 1px solid;
 }
@@ -59,4 +63,31 @@ pre
 
 #code {
     width: 300px;
+}
+
+#project-1:hover{
+    cursor:pointer;
+    animation-name: portfImgAnim;
+}
+
+#project-1 {
+    box-shadow: 3px 2px 15px -3px rgba(0,0,0,0.35);
+    transform: scale(1);
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes portfImgAnim {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100%{
+        transform:scale(1);
+    }
 }

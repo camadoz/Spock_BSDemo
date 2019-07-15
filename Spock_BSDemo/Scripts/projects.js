@@ -80,23 +80,18 @@ $("#btnCalculation").click(() => {
 
         $("#maxValue").html("The Max value is : <span class=\"mathResult\">" + maxValue + "</span>" );
 
-        //$("#minValue").text("The Min value is : " + minValue);
+       
         $("#minValue").html("The Min value is : <span class=\"mathResult\">" + minValue + "</span>");
 
-        //$("#productValue").text("The product value is : " + prodValue);
+       
         $("#productValue").html("The product value is : <span class=\"mathResult\">" + prodValue + "</span>");
 
-        //$("#sumValue").text("The sum value is : " + sumValue);
+       
         $("#sumValue").html("The sum value is : <span class=\"mathResult\">" + sumValue + "</span>");
 
-        //$("#averageValue").text("The average value is : " + averageValue);
+        
         $("#averageValue").html("The average value is : <span class=\"mathResult\">" + averageValue + "</span>");
-
     }
-
-
-
-
 });
 
 $("#btnClearForm").click(() => {
@@ -129,11 +124,6 @@ $("#btnPalCal").click(() => {
         $("#palResult").html("The factorial of " + initialNumber + " is <span class=\"red\">" + result + "</span>");
 
     }
-
-
-
-
-
 });
 
 $("#btnFacClear").click(() => {
@@ -183,13 +173,7 @@ $("#btnCheckPal").click(() => {
             $("#palMessage").removeClass("show");
             $("#palMessage").addClass("hide");
         }
-
-
     }
-
-
-
-
 
 });
 
@@ -211,10 +195,9 @@ $("#btnFbStart").click(() => {
 
     var number1 = Number($("#txtFibNum1").val());
     var number2 = Number($("#txtFibNum2").val());
-
+    clearFBanswerField();
     if ($("#txtFibNum1").val().length == 0 || $("#txtFibNum2").val().length == 0) {
         alert("Empty fiels are not allowed. Sorry!");
-
     }
     else {
         let strResultFb = "";
@@ -250,10 +233,11 @@ $("#btnFbStart").click(() => {
         $("#fbAnswer").append(html);
     }
 
-
-
-
 });
+
+function clearFBanswerField() {
+    $("#fbAnswer").text("");
+}
 
 $("#btnClearFB").click(() => {
 
@@ -281,7 +265,7 @@ $("#btnShowCodeFSOF").click(() => {
 $("#btnSOFStart").click(() => {
 
             //Collect values from user.
-            //Warm user if no values are entered.
+            //Warn user if no values are entered.
   
             if ($("#number1").val().length == 0 ||
                 $("#number2").val().length == 0 ||
@@ -290,7 +274,7 @@ $("#btnSOFStart").click(() => {
                 $("#number5").val().length == 0 ||
                 $("#number6").val().length == 0 ||
                 $("#kValue").val().length == 0) {
-                alert("Empty fiels are not allowed. Sorry!");
+                
             }
             else
             {
@@ -314,6 +298,7 @@ $("#btnSOFStart").click(() => {
                   {
                       if (numbList[i] + numbList[j] == kValue) {
                           //Display result
+                          clearSOFfields();
                           $("#sofAnswer").append($.parseHTML(kValue + " was found by adding array member <span class=\"red\">" + numbList[i] + "</span> and <span class=\"red\">" + numbList[j] + "</span>"));
                           foundSet = true;
                       }
@@ -324,16 +309,12 @@ $("#btnSOFStart").click(() => {
 
                 if (!foundSet)
                 {
+                    clearSOFfields();
                     $("#sofAnswer").append($.parseHTML("No set were found. Try again!"));
                 }
 
 
             }
-
-
-
-
-
 });
 
 $("#btnClearSOF").click(() => {
@@ -341,3 +322,8 @@ $("#btnClearSOF").click(() => {
     $(".clearSOFfield").val("");
     $(".clearSOFresult").text("");
 });
+
+function clearSOFfields() {
+   
+    $("#sofAnswer").text("");
+}
