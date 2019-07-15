@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "JSDemo";
+}
+
+<h2>JSDemo</h2>
+
+<div class="row">
+
+    <div class="col-lg-6">NUmber 1:</div>
+    <div class="col-lg-6"><input type="text" id="number1" /></div>
+</div>
+
+<div class="row">
+<div class="col-lg-6">Number 2: </div>
+<div class="col-lg-6"><input type="text" id="number2" /></div>
+</div>
+
+<div class="row">
+    <div class="btn btn-primary" id="btnCheckAnswer">Click To Check Result</div>
+</div>
+
+<hr />
+
+<div class="row">
+<div class="col-lg-6">The answer is: </div>
+<div class="col-lg-6"><p id="answerTarget"></p></div>
+</div>
+@section Scripts{ 
+<script>
+    $("#btnCheckAnswer").click(() => {
+
+          var numbers= [1,2,4];
+         alert(Math.max(...numbers));
+        let count = 2;
+        while (count > 0) {
+
+           
+            //numbers.push = Number(window.prompt("enter a value"));
+           
+            count--;
+        }
+
+        
+           let number1 = Number( $("#number1").val());
+           let number2 = Number( $("#number2").val());
+
+           let answer = number1 * number2;
+
+            $("#answerTarget").text("The answer is: " + answer);
+        alert("the result is " + answer);
+     });
+
+    
+
+
+ 
+</script>
+}

@@ -1,0 +1,561 @@
+﻿
+@{
+    ViewBag.Title = "MathResult";
+}
+<!--    CSS Section-->
+<style>
+    .boxResult
+    {
+        border-radius: 5px;
+        border: 1px solid;
+    }
+
+    .hide
+    {
+        display: none;
+    }
+
+    .show
+    {
+        display: block;
+    }
+
+    .blue
+    {
+        color:blue;
+    }
+
+    .green
+    {
+        color:forestgreen;
+    }
+
+    .red
+    {
+        color:red;
+    }
+</style>
+<!--    End of CSS Section-->
+
+
+<h2>MathResult</h2>
+
+<div class="row" id="mainContainer">
+
+    <div class="col-lg-12 h1 text-center">Exercises 1</div>
+
+    <div class="col-lg-6" id="leftColum">
+
+    </div>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Exercise 1</h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item active"><a class="nav-link"  href="#home">ffhfhfMath</a></li>
+                        <li class="nav-item"><a class="nav-link"  href="#menu1">Factorial</a></li>
+                        <li class="nav-item"><a class="nav-link"  href="#menu2">Palidrome</a></li>
+                        <li class="nav-item"><a class="nav-link"  href="#menu3">FizzBuzz</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <!--                           Calculation  Section                        -->
+                        <div id="home" class="tab-pane fade in active">
+                            <!--  TAB ONE   -->
+                            <div class="container-fluid">
+                                <div class="row ">
+                                    <div class="col-lg-12 text-center h2">Math Calculation Exercises  </div>
+                                    <div class="row">
+                                        <div class="col-lg-12"><hr /></div>
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="row form-group">
+
+                                            <div class="col-md-12"> <label for="num1">Enter number 1: </label> <input id="num1" class="form-control clearField" type="number" /></div>
+                                        </div>
+
+                                        <div class="row form-group">
+                                            <div class="col-md-12"> <label for="num2">Enter number 2: </label><input id="num2" class="form-control clearField" type="number" /></div>
+                                        </div>
+
+                                        <div class="row form-group">
+                                            <div class="col-md-12"> <label for="num3">Enter number 3: </label><input id="num3" class="form-control  clearField" type="number" /></div>
+                                        </div>
+
+                                        <div class="row form-group">
+                                            <div class="col-md-12"> <label for="num4">Enter number 4: </label><input id="num4" class="form-control clearField" type="number" /></div>
+                                        </div>
+
+                                        <div class="row form-group">
+                                            <div class="col-md-12"> <label for="num5">Enter number 5: </label><input id="num5" class="form-control clearField" type="number" /></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 text-center boxResult" id="boxResult">
+
+                                        <div class="row h3 text-center">Result</div>
+                                        <div class="row">
+                                            <p class="clearResult" id="maxValue"></p>
+                                        </div>
+
+                                        <div class="row">
+                                            <p class="clearResult" id="minValue"></p>
+                                        </div>
+
+                                        <div class="row">
+                                            <p class="clearResult" id="productValue"></p>
+                                        </div>
+
+                                        <div class="row">
+                                            <p class="clearResult" id="sumValue"></p>
+                                        </div>
+
+                                        <div class="row">
+                                            <p class="clearResult" id="averageValue"></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-12"><hr /></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <button class="btn btn-primary btn-lg btn-block" id="btnCalculation">Calculate</button>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <button class="btn btn-danger btn-lg btn-block" id="btnClearForm">Clear</button>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <button class="btn btn-info btn-lg btn-block" id="btnClearFormCal">Display Code</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--                           End of calculatio Section                        -->
+                        <!--                           Factorial Section                        -->
+                        <div id="menu1" class="tab-pane fade">
+
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center h2">Factorial Calculation  </div>
+                                    <div class="row">
+                                        <div class="col-lg-12"><hr /></div>
+                                    </div>
+                                    @*<div class="row align-self-center">*@
+
+                                    <div class="col-md-6">
+
+                                        <div class="row form-group">
+
+                                            <div class="col-md-12"> <label for="num1">Enter number : </label> <input id="factorialNum" class="form-control clearFacField" type="number" /></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6 ">
+                                        <div class="row  text-center boxResult">
+                                            @*<div class="col-md-12 align-self-center boxResult">*@
+                                            <div class="row h3 text-center">Result</div>
+                                            <p id="palResult" class="clearFacResult" style="font-size:large; "></p>
+                                            @*</div>*@
+                                        </div>
+                                    </div>
+                                    @*</div>*@
+                                </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="btn btn-primary btn-lg btn-block" id="btnPalCal">Calculate</div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="btn btn-danger btn-lg btn-block" id="btnFacClear">Clear</div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="btn btn-info btn-lg btn-block" id="btnClearFormFact">Display Code</div>
+                                        </div>
+                                    </div>
+
+                                 <div class="row">
+                                     <div class="col-md-12">
+                                         <div id="code">
+                                             <pre class="brush: js">
+                                
+                                                <div>test</div>
+                                             </pre>
+                                         </div>
+                                     </div>
+                                 </div>
+                                
+
+                            </div>
+
+                        </div>
+                        <!--                           End of Palindrom Section                        -->
+                        <!--                           Palindrome Section                        -->
+                        <div id="menu2" class="tab-pane fade">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center h2">Palindrome  </div>
+                                    <div class="col-md-6">
+
+                                        <div class="row form-group">
+
+                                            <div class="col-md-12"> <label for="palText">Enter some text: </label> <input id="palText" class="form-control clearPalField" type="text" /></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="row form-group text-center">
+                                            <div class="col-md-12 align-self-center">
+                                                <p id="palAnswer" class="clearPalResult" style="font-size:large; "></p>
+                                            </div>
+                                        </div>
+                                        <div id="palMessage" class="alert alert-success hide">
+                                            <strong>Success!</strong> Yes! It's a palindrome.
+                                        </div>
+
+                                        <div id="palFailMessage" class="alert alert-info hide">
+                                            <strong>Info!</strong>It is not a palindrome. Try again.
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-lg-12"><hr /></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="btn btn-primary btn-lg btn-block" id="btnCheckPal">Click here</div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="btn btn-danger btn-lg btn-block" id="btnClearPal">Clear</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="btn btn-info btn-lg btn-block" id="btnClearFormPal">Display Code</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--                          End of Palindrom Section                        -->
+                        <!--                          FizzBuzz Section                  -->
+                        <div id="menu3" class="tab-pane fade">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center h2">FizzBuzz  </div>
+                                    <div class="col-md-6">
+
+                                        <div class="row form-group">
+
+                                            <div class="col-md-12"> <label for="txtFibNum1">Enter a number : </label> <input id="txtFibNum1" class="form-control clearFBField" type="number" /></div>
+                                        </div>
+
+                                        <div class="row form-group">
+
+                                            <div class="col-md-12"> <label for="txtFibNum2">Enter a number : </label> <input id="txtFibNum2" class="form-control clearFBField" type="number" /></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="row form-group text-center pre-scrollable" style="height:400px;">
+                                            <div class="col-md-12 align-self-center ">
+                                                <p id="fbAnswer" class="clearFBResult" style="font-size:large; "></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-lg-12"><hr /></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="btn btn-primary btn-lg btn-block" id="btnFbStart">Click here</div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="btn btn-danger btn-lg btn-block" id="btnClearFB">Clear</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="btn btn-info btn-lg btn-block" id="btnClearFormFB">Display Code</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--                          End of FizzBuzz Section           -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-6" id="rightColumn">
+
+    </div>
+
+</div>
+
+
+@section scripts{
+    <script>
+
+        //Calculation section
+        $("#btnCalculation").click(() => {
+
+            var numb1 = Number($("#num1").val());
+            var numb2 = Number($("#num2").val());
+            var numb3 = Number($("#num3").val());
+            var numb4 = Number($("#num4").val());
+            var numb5 = Number($("#num5").val());
+
+
+            if ($("#num1").val().length == 0 ||
+                $("#num2").val().length == 0 ||
+                $("#num3").val().length == 0 ||
+                $("#num4").val().length == 0 ||
+                $("#num5").val().length == 0) {
+                alert("Empty fiels are not allowed. Sorry!");
+            }
+            else {
+                var maxValue = Math.max(numb1, numb2, numb3, numb4, numb5);
+                var minValue = Math.min(numb1, numb2, numb3, numb4, numb5);
+                var maxValue = Math.max(numb1, numb2, numb3, numb4, numb5);
+
+                var prodValue = Number(numb1 * numb2 * numb3 * numb4 * numb5);
+
+                var sumValue = Number(numb1 + numb2 + numb3 + numb4 + numb5);
+
+                var averageValue = Number((numb1 + numb2 + numb3 + numb4 + numb5) / 5);
+
+
+                $("#maxValue").text("The Max value is :" + maxValue);
+
+                $("#minValue").text("The Min value is :" + minValue);
+
+                $("#productValue").text("The product value is :" + prodValue);
+
+                $("#sumValue").text("The sum value is :" + sumValue);
+
+                $("#averageValue").text("The average value is :" + averageValue);
+
+
+            }
+
+
+
+
+        });
+
+        $("#btnClearForm").click(() => {
+
+
+            $(".clearField").val("");
+            $(".clearResult").text("");
+
+        });
+
+        //Factorial section
+        $("#btnPalCal").click(() => {
+
+            var factorialNumber = $("#factorialNum").val();
+            if ($("#factorialNum").val().length == 0) {
+                alert("Empty fiels are not allowed. Sorry!")
+
+            }
+            else {
+                var initialNumber = factorialNumber;
+
+                var result = 1;
+
+                while (factorialNumber > 1) {
+
+                    result *= factorialNumber;
+                    factorialNumber--;
+                }
+
+                $("#palResult").text("The factorial of " + initialNumber + " is " + result);
+
+            }
+
+
+
+
+
+        });
+
+        $("#btnFacClear").click(() => {
+
+
+            $(".clearFacField").val("");
+            $(".clearFacResult").text("");
+
+        });
+
+        //Palindrom section
+        $("#btnCheckPal").click(() => {
+
+            if ($("#palText").val().length != 0) {
+
+                var initalText = $("#palText").val();
+                var parseText = "";
+                var palText = "";
+                var arrayTest = "";
+
+
+                for (var i = initalText.length - 1; i >= 0; i--)
+                {
+                    parseText += initalText[i];
+                }
+
+                for (var i = initalText.length - 1; i >= 0; i--)
+                {
+                    palText += initalText.substring(i, i + 1);
+                }
+
+                arrayTest = initalText.split('').reverse().join('');
+               
+
+
+                if (initalText.localeCompare(parseText) == 0)
+                {
+                    $("#palAnswer").text("The word " + initalText + " is a palindrom:" + parseText);
+                    $("#palMessage").addClass("show");
+                    $("#palMessage").removeClass("hide");
+
+                    $("#palFailMessage").removeClass("show");
+                    $("#palFailMessage").addClass("hide");
+                }
+                else
+                {
+                    $("#palAnswer").text("The word " + initalText + " is not a palindrom: " + parseText);
+                    $("#palFailMessage").addClass("show");
+                    $("#palFailMessage").removeClass("hide");
+
+                    $("#palMessage").removeClass("show");
+                    $("#palMessage").addClass("hide");
+                }
+
+
+            }
+            else
+            {
+                alert("Empty fiels are not allowed. Sorry!");
+            }
+
+
+
+
+        });
+
+        $("#btnClearPal").click(() => {
+
+            $(".clearPalField").val("");
+            $(".clearPalResult").text("");
+
+            $("#palFailMessage").removeClass("show");
+            $("#palFailMessage").addClass("hide");
+
+            $("#palMessage").removeClass("show");
+            $("#palMessage").addClass("hide");
+
+        });
+
+        //FizzBuzz section
+        $("#btnFbStart").click(() => {
+
+            var number1 = Number($("#txtFibNum1").val());
+            var number2 = Number($("#txtFibNum2").val());
+
+            if ($("#txtFibNum1").val().length == 0 || $("#txtFibNum2").val().length == 0)
+            {
+                alert("Empty fiels are not allowed. Sorry!");
+
+            }
+            else
+            {
+                let strResultFb = "";
+
+
+                for (var i = 1; i <= 100; i++)
+                {
+                    if ((i % number1 == 0) && (i % number2 == 0)) {
+                        strResultFb += "<span class=\"red\">FizzBuzz</span>";
+                    }
+                    else if (i % number1 == 0) {
+                        strResultFb += "<span class=\"green\">Fizz</span>";
+                    }
+                    else if (i % number2 == 0) {
+                        strResultFb += "<span class=\"blue\">Buzz</span>";
+                    }
+                    else {
+                        strResultFb += (i + "");
+                    }
+
+                    //Add a period if the end of the iteration has been reached.
+                    if (i < 100) {
+                        strResultFb += ", ";
+                    }
+                    else {
+                        strResultFb += ".";
+                    }
+                }
+
+                //Render HTML tags wihtin the string.
+                var html = $.parseHTML(strResultFb);
+
+                //Display string.            
+                $("#fbAnswer").append(html);
+            }
+
+
+
+
+        });
+
+        $("#btnClearFB").click(() => {
+
+            $(".clearFBField").val("");
+            $(".clearFBResult").text("");
+        });
+
+    </script>
+
+
+
+
+}
+
+
+
+
+

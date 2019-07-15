@@ -1,0 +1,62 @@
+﻿.boxResult {
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+
+pre 
+{
+   overflow:auto;
+   width:100px;
+}
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.blue {
+    color: blue;
+    font-weight: bold;
+}
+
+.green {
+    color: forestgreen;
+    font-weight: bold;
+}
+
+.mathResult{
+    color:red;
+    font-weight:bold;
+    font-size:large;
+}
+
+.palResult{
+    color:forestgreen;
+    font-weight:bold;
+    font-size:large;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+#project-1
+{
+    background-image:url(/images/landscape-1.jpg);
+    height:400px;
+    background-size:110% 110%;
+    background-repeat:no-repeat;
+}
+
+.title-project{
+    color:white;
+
+}
+
+#code {
+    width: 300px;
+}
